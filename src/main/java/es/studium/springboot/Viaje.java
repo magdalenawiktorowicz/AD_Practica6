@@ -1,7 +1,7 @@
 package es.studium.springboot;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,17 +18,17 @@ public class Viaje {
 	@Autowired
 	private Tren trenAsignado;
 	@Autowired
-	private List<Pasajero> pasajeros;
+	private Set<Pasajero> pasajeros;
 	
 	public Viaje() {
 		this.nombre = "";
 		this.origen = "";
 		this.destino = "";
 		this.trenAsignado = new Tren();
-		this.pasajeros = new ArrayList<Pasajero>();
+		this.pasajeros = new HashSet<Pasajero>();
 	}
 
-	public Viaje(String nombre, String origen, String destino, Tren trenAsignado, List<Pasajero> pasajeros) {
+	public Viaje(String nombre, String origen, String destino, Tren trenAsignado, Set<Pasajero> pasajeros) {
 		this.nombre = nombre;
 		this.origen = origen;
 		this.destino = destino;
@@ -68,11 +68,11 @@ public class Viaje {
 		this.trenAsignado = trenAsignado;
 	}
 
-	public List<Pasajero> getPasajeros() {
+	public Set<Pasajero> getPasajeros() {
 		return pasajeros;
 	}
 
-	public void setPasajeros(List<Pasajero> pasajeros) {
+	public void setPasajeros(Set<Pasajero> pasajeros) {
 		this.pasajeros = pasajeros;
 	}
 
